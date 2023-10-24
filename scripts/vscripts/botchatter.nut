@@ -227,9 +227,9 @@ local isRochelle = "models/survivors/survivor_producer.mdl";
 
 function BotRandomChatter()
 {	
-	while( bot = Entities.FindByClassname( bot, "player" ) )
+	while ( bot = Entities.FindByClassname( bot, "player" ) )
 	{
-		if( bot.IsSurvivor() && IsPlayerABot( bot ) )
+		if ( bot.IsSurvivor() && IsPlayerABot( bot ) )
 		{
 			local modelName = bot.GetModelName();
 			local specificResponseConcepts;
@@ -268,4 +268,5 @@ function BotRandomChatter()
 }
 
 // Need to run this on a timer of some sorts.
+// Let's use the timer's time instead of setting it on DoEntFire
 BotRandomChatter();
