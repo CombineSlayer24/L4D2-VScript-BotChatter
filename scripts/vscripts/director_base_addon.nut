@@ -1,0 +1,1 @@
+IncludeScript( "bot_chatter", null );
