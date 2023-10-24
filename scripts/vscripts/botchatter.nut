@@ -259,7 +259,7 @@ function BotRandomChatter()
 				printl( survivorName + " Picked General_ResponseConcepts" );
 			}
 
-			// Jab away!
+			// Jab away! Time is set low for testing, have it set for 45 - 120
 			DoEntFire( "!self", "SpeakResponseConcept", responseConcepts[ RandomInt( 0, responseConcepts.len() - 1 ) ], RandomFloat( 1.5, 6.0 ), null, bot );
 		}
 	}
