@@ -8,20 +8,21 @@ Msg( "-----------------------------------\n" );
 // Chat commands to change convars
 // Make sure that the bots do not talk while talking (Is this possible?)
 // --------------------------------------------------------------------------
-// I had ion's vocalizer in mind when coming with random responses.
+// ion's vocalizer is required, for those snooping in here.
 // Credit to ChimiChamo for inspiration and for some code as like a base of some sorts.
 
 local General_ResponseConcepts =
 [
-//	"PlayerLedgeHangMiddle",
-//	"PlayerLedgeHangStart",
-//	"PlayerLedgeHangEnd",
+	"PlayerLedgeHangMiddle",
+	"PlayerLedgeHangStart",
+	"PlayerLedgeHangEnd",
 	"PlayerDeath",
 	"PlayerLaugh",
 	"PlayerYes",
 	"PlayerNo",
 	"PlayerSorry",
 	"PlayerHurrah",
+	"PlayerChoke",
 	"PlayerIncapacitated",
 	"PlayerAreaClear",
 	"PlayerNegative", // Swear
@@ -43,6 +44,7 @@ local General_ResponseConcepts =
 	"PlayerIncoming",
 	"PlayerLedgeSave",
 	"RelaxedSigh",
+	"UseAdrenaline",
 	"ScreamWhilePounced",
 	"ReviveFriendDownFinal",
 	"PlayerReviveFriendCritical", // You're gonna die if you go down again
@@ -60,8 +62,26 @@ local General_ResponseConcepts =
 //	"PlayerMoveOn",
 //	"PlayerHurryUp",
 //	"PlayerAskReady",
+//	"PlayerEmphaticGo",
+	"PlayerHeardCharger",
+	"PlayerHeardJockey",
+	"PlayerHeardSpitter",
+	"PlayerHeardWitch",
+	"PlayerHeardSmoker",
+	"PlayerHeardHunter",
+	"PlayerHeardBoomer",
+	"PlayerWarnCharger",
+	"PlayerWarnJockey",
+	"PlayerWarnSpitter",
+	"PlayerWarnSmoker",
+	"PlayerWarnHunter",
+	"PlayerWarnBoomer",
+	"PlayerWarnTank",
+	"iMT_PlayerGetToVehicleBoat",
+	"iMT_PlayerGetToVehicleChopper",
+	"iMT_PlayerGetToVehicleWheel",
 	"iMT_PlayerReloading",
-	"iMT_EllisStories",	// If Ion's vocalizer is installed, survivors will tell ellis to shut up
+	"iMT_EllisStories",	// Now the best time?
 	"iMT_PlayerFriendlyFire",
 	"iMT_PlayerWitchChasing",
 	"iMT_PlayerHello",
@@ -73,13 +93,22 @@ local General_ResponseConcepts =
 	"iMT_PlayerDeathScream", // Falling scream
 	"iMT_PlayerTeamKill",	// B&W Friendlyfire
 	"iMT_PlayerBattleCry", // Chainsaw killstreak
-	"iMT_PlayerIncapacitatedHurt", // Ouch
-	"iMT_PlayerPainNoise",	// AHHHHH!
+	"iMT_PlayerIncapacitatedHurt", // AHHHHH!
+	"iMT_PlayerPainNoise",	// Ouch
 	"iMT_PlayerTransition", // That was close
+	"iMT_PlayerGoingToDie",
+	"iMT_PlayerBreathing",
+	"iMT_PlayerKilledZombie", // Got it
+	"iMT_SurvivorWasPounced",
+	"iMT_PlayerNiceShot",
+	"iMT_EllisStoryInterrupt",
 ];
+
 
 local Coach_ResponseConcepts =
 [
+	"_C1M1_ElevatorHello", // Hello, My name is Coach
+	"C6M1_IntotheparkNoHealth",
 	"C5M3SeeGraveyard02", // Get Your ass moving Nick!
 	"WeddingWitchDead01", // You got problems boy, deep down.
 	"WorldC6M2_OnTourWalk101c", // Yes, a Shithole.
@@ -94,22 +123,6 @@ local Coach_ResponseConcepts =
 	"_C2M2_CottonCandy01", // Cotton candy, king of foods.
 	"C5M3Bodies03", // I don't know shit, we gonna keep moving.
 	"_C2M1_Fall01", // Damn, I'm too old.
-	"iMT_Ride", // Coach is going for a ride!
-	"iMT_BurgerMeal", // BBQ Bacon Burger.
-	"iMT_Pancakes", // Pancakes.
-	"iMT_Hungry", // Kettlecorn, sub style, candy machine.
-	"iMT_Apocalypse", // I find a burger tank.
-	"iMT_Neighborhood", // THIS USED TO BE A NICE NEIGHTBORHOOD!
-	"iMT_Hosanna", // Ohhh sweet hosanna!
-	"iMT_Pray", // Gather around y'all.
-	"iMT_Teaching", // This shits worse than teaching health class!
-	"iMT_Fair", // Sounds fair.
-	"iMT_Chicken", // Chicken ain't nuthin but a bird.
-	"iMT_Dreaming", // Hoping for an open burger tank.
-	"iMT_GetBusy", // Get busy living, or get busy dyin'.
-	"iMT_Night", // Shit, looks like it's gonna be one hell of a night.
-	"iMT_LouisRules", // Louis in the house!
-	"iMT_Killing", // Damn right, we getting good at killing these things.
 	"C6M1Intro_13e", // The boy says thank you.
 	"C2M5_PlanWorked", // IT worked!
 	"WorldIntroC31e3", // I'm not inviting CEDA.
@@ -127,10 +140,51 @@ local Coach_ResponseConcepts =
 	"_C3M1CrazyMilitants", // I seen that movie, it don't end well.
 	"WorldC3M1FerryCrossingG01", // Though I walk through the shadow of death, I will fear no evil.
 	"C2M3SafeIntro011", // Nick, I was on the football team, Coach did just fine.
+	"_C2M1_Fall02", // You a crazy man, Ellis .
+	"c6M3_loss2", // I think we all losin' people.
+	"WorldC3M1FerryCrossingD02", // Sometimes it's best not knowing.
+	"WorldC3M1FerryCrossingI03", // Look at you youngin', giving Nick some shit back.
+	"_C1M1_ElevatorHello2AliveExtra2", // You're going to make it.
+	"DLC1_C6M3_SafeRoomConvo02e", // Sometimes, you got to have faith nick.
+	"C5M5_saferoom005", // Well, you're free to make yourself a new life in here Nick.
+	"_c4m2_waterpool02", // First the plague, now the flood.
+	"Player.CoverMeC1RCoach2", // I ain't never done this before.
+	"WorldSignWhereIsCEDA2", // Zombified
+	"C5M3Bodies01", // How does being so right feel Nick!?
+	"WorldC502NotZombies3b", // Yeah, true that.
+	"_C1M1_ElevatorHello05c", // Let's stay together for a little while longer, Okay Nick?
+	"InfoRemc3m2_parachutist2", // Why would you ever jump out of a plane?
+	"WorldIntroC3e1", // Can I get a little warning?
+	"C3M3SafeRoom2b2", // Ok, this just makes me sad.
+	"C5M2_signcontagious01", // Sure is.
+	"DLC1_C6M2_SafeRoomConvo13d", // There you go Nick, stay positive.
+	"DLC1_C6M2_SafeRoomConvo01a", // Nick, son. I think we got bigger problems.
+	"C5M1_intro008", // ON THE OTHER MOTHER F'ING SIDE OF THE WATER.
+	"C6M1Intro_13b", // You've been killing zombies for the better part of 2 days boy, you can talk to a girl.
+	"WorldC502Smell2", // Smells like people been living here and shit.
+	"WorldC6M2_InSewer101a", // Nick my man, face it. We're walking through shit.
+	"iMT_Ride", // Coach is going for a ride!
+	"iMT_BurgerMeal", // BBQ Bacon Burger.
+	"iMT_Pancakes", // Pancakes.
+	"iMT_Hungry", // Kettlecorn, sub style, candy machine.
+	"iMT_Apocalypse", // I find a burger tank.
+	"iMT_Neighborhood", // THIS USED TO BE A NICE NEIGHTBORHOOD!
+	"iMT_Hosanna", // Ohhh sweet hosanna!
+	"iMT_Pray", // Gather around y'all.
+	"iMT_Teaching", // This shits worse than teaching health class!
+	"iMT_Fair", // Sounds fair.
+	"iMT_Chicken", // Chicken ain't nuthin but a bird.
+	"iMT_Dreaming", // Hoping for an open burger tank.
+	"iMT_GetBusy", // Get busy living, or get busy dyin'.
+	"iMT_Night", // Shit, looks like it's gonna be one hell of a night.
+	"iMT_LouisRules", // Louis in the house!
+	"iMT_Killing", // Damn right, we getting good at killing these things.
 ];
 
 local Nick_ResponseConcepts =
 [
+	"_C1M1_ElevatorHello", // Name's Nick.
+	"C6M1_IntotheparkNoHealth",
 	"AskWhat",
 	"WorldC6M2_Tattoo01b", // I'll write Greasy Pig, we all (laughs)...
 	"_C2M2_Steak01", // I'll deep-fry you an entire goddamn cow.
@@ -192,6 +246,8 @@ local Nick_ResponseConcepts =
 	"C2M3SafeIntro009", // Not cool Rochelle.
 	"C2M3SafeIntro007", // Did ya see that sign up front? Cousins only day today.
 	"DLC1_C6M3_SafeRoomConvo03d", // I'm not gonna look, Ellis.
+	"C5M4JetPlanes", // Shut up Ellis.
+	"C4M1_NoGas01", // There goes our milkrun
 	"iMT_Quiet", // Shut up Ellis.
 	"iMT_HavingFun", // Ellis, do not look like you're having fun.
 	"iMT_Fantasy", // THAT has been a fantasy of mine for a long long time.
@@ -214,13 +270,14 @@ local Nick_ResponseConcepts =
 
 local Ellis_ResponseConcepts =
 [
+	"_C1M1_ElevatorHello", // Folk's call me Ellis.
+	"C6M1_IntotheparkNoHealth",
 	"WorldC6M1_WeddingWarn03c", // What?
 	"_c2m3_coaster03", // Oh my god, it's Christmas!
 	"C1M2SafeRooma2", // Heh heh, zombie apocalypse ain't all bad.
 	"C1M3SafeRoom2e", // Amen.
 	"_c2m3_coollight01", // This is awesome, man!
 	"_C4M5_BoatComing01", // VIRGIL, WHAT'S UP BROTHER?!
-	"C1M4SafeRoom2b3", //
 	"C1M4SafeRoom2b3", // That man is an American hero.
 	"WorldC3M1FerryCrossingJ3", // I knew it, all this runnin' around and climbing stuff is making me buff as hell.
 	"C1M4SafeRoom2a5", // Now hold one second, you've been making jokes about JGJ.
@@ -295,13 +352,154 @@ local Ellis_ResponseConcepts =
 	"iMT_FeelHer", // We're getting close, I can feel her.
 	"iMT_InHonor", // I'm going to kill a tank for her honor.
 	"iMT_Break", // If anyone needs a bathroom break, now is the time.
+	"C5M4JetPlanes", // Nick, they can't hear you in jet planes.
 	"C2M1Intro008", // I love you.
+];
+
+local Rochelle_ResponseConcepts =
+[
+	"_C1M1_ElevatorHello", // Hello, My name is Rochelle
+	"C6M1_IntotheparkNoHealth",
+	"AskWhat", // What?
+	"WorldC6M1_PostWedding02a", // Is that how your brains really work?
+	"DLC1_C6M2_SafeRoomConvo20a", // Well anyone who survives this shit is gonna be in great shape.
+	"C1M3SafeRoom2e", // Amen
+	"DLC1_C6M2_SafeRoomConvo08f", // He is better looking than you.
+	"_C4M5_BoatComing01", // There's Virgil!
+	"C6M1Intro_10d", // See Nick, you should try being nice.
+	"C6M1Intro_18b", // I wanna call you an Asshole, really.
+	"C6M1Intro_15c", // You used to be a can artist?
+	"C6M1Intro_06d", // Then it's a date.
+	"_C2M2_Kiddie02", // Ah, to hell with it. Whooo, Kiddie land!
+	"DLC1_C6M2_SafeRoomConvo19a", // You lookin' good Coach
+	"WorldSignReportSick3", // Don't worry Ellis, they mean the flu, not in the head.
+	"C6M1Intro_22a", // Oh thank god! I thought I was the last woman on Earth.
+	"WorldC6M2_OnTourWalk101a", // Shit-hole? Sorry Coach.
+	"C3M2SafeRoom2d", // The white suit with zombie brains on it, that one?
+	"_C2M2_Okra", // You don't like fried Okra?
+	"C6M1Intro_20d", // Oh, Okay then. Yes, we are all Vampires.
+	"C6M1Intro_17d", // Well shit.
+	"WorldC502ArmYourself", // I thought all you yokels had guns.
+	"C6M1Intro_22f", // [sighs] If that's what we gotta do, that's what we gotta do.
+	"C1M2SafeRoomd2", // I bet you're right.
+	"PlayerPickupFirstSMG2", // I guess I don't have much choice.
+	"_C2M2_Kiddie05", // He is making the best out of a bad situation
+	"C5M1Flyby02", // I'm going to take that as a good sign.
+	"WorldC6M2_InSewer202a", // I'm not.... laughing, Ellis.
+	"WorldC6M1_WeddingWarn03b", // WOULD YOU GUYS SHUT UP!
+	"C5M5_Button2207", // That's sweet.
+	"C1M2SafeRoomd2a", // A gun STORE?
+	"C6M1Intro_05c", // You aren't from around these parts?
+	"_C4M5_Intro04", // Sounds like a plan.
+	"DLC1_C6M2_SafeRoomConvo03c", // Calm down Ellis.
+	"C2M3SafeIntro009", // I never liked the Tunnel of Love.
+	"_C2M2_Riders03", // I hate classic rock.
+	"DLC1_C6M2_SafeRoomConvo17b", // Does anyone want to put a vote?
+	"DLC1_C6M2_SafeRoomConvo06a", // I have memories too.
+	"WorldC6M2_Tattoo02d", // Ugh
+	"C1M4NearFinale03a", // I'm getting strong "we're not getting resuce" vibes here.
+	"DLC1_C6M2_SafeRoomConvo14e", // Hey Nick, there's a -
+	"WorldC6M2_InSewer101a", // Nick, I'm pretty sure this is sewage.... Yeah, it is.
+	"WorldC6M2_OnTourWalk102b", // Shut up, Nick.
+	"C1M2SafeRoomb3", // Ok Nick, being an asshole may have worked before.
+	"WeddingWitchDead01", // Nick, you scare me.
+	"DLC1_C6M2_SafeRoomConvo01a", // Compared to you Nick, he was downright nice.
+	"Player.NotPackingHeat2", // OH, you meeting some friends?
+	"C5M3Jets3", // NO NO NO NO.... NOOOO!
+	"_C2M1MonsterTruck", // If JGJ have driven a monster truck.
+	"_C2M1abandoned02", // That's probably it.
+	"C6M1Intro_19b", // That sounds simple.
+	"C5M4BombIntA", // They are not checking for survivors anymore.
+	"C3M3SafeRoom2a3", // Oh zombie swamp people, I'm sorry but I have to shoot you.
+	"C6M1Intro_18d", // It isn't worth getting to the other side?
+	"DLC1_C6M3_SafeRoomConvo06a", // Someone has a crush on that "awesome" biker dude.
+	"DLC1_C6M2_SafeRoomConvo03a", // You'll be with her soon, also it's a car, and it's creepy.
+	"_C1M1_ElevatorHello2AliveExtra2", // comeoncomeoncomeon
+	"DLC1_C6M3_SafeRoomConvo09b", // I uh... lucky girl?
+	"C5M1_intro010", // With our luck, it's just a bridge monster
+	"_C2M2_ThisTall01", // Soo many Tanks.
+	"WorldC6M1_WeddingWarn03a", // It's funny that she's wearing a dress, but SHE WILL KILL YOU.
+	"_C2M2_Steak01", // I'm buying everyone [x] guns.
+	"C2M3SafeIntro010", // Gee, my bedroom was baby blue. I think my dad wanted a boy.
+	"DLC1_C6M3_SafeRoomConvo04d", // Nick is jelous.
+	"C6M1Intro_24b", // There's no such thing as aliens.
+	"iMT_Tits", // We are here, cresant city. I tell you now, I am not showing anyone my tits.
+	"iMT_NoNoNo", // No no no no nooo.
+	"iMT_Charming", // Oh Nick, charming isn't the word I'd describe you with.
+	"iMT_Wedding", // Hey Ellis, it's a nice day for a white wedding.
+	"iMT_NickOCD", // I'm not gonna worry about cooties, Nick.
+	"iMT_LoveGuns", // But I'm starting to love guns.
+	"iMT_NoSex", // Not if you're the last man on Earth
+	"iMT_Popcorn", // Popcorn, I love popcorn. You Coach?
+	"iMT_Kitchen", // No one better make a crack about me in the kitchen.
+	"iMT_Aye", // Aye...
+	"iMT_Stomach", // I HEAR A HUN - Coach, is that your stomach?
+	"iMT_Something", // Something old, something new, something about to rip your guts apart.
+	"iMT_Turd", // Nick, you got a turd on your shoulder.
+	"iMT_NewVoices", // It's nice to hear some new voices.
+	"iMT_WhereFrom", // Wow, where the hell did you come from?
+	"iMT_Learning", // I didn't know learning could be this much fun.
+	"iMT_Hate", // Yeah, I hate stuff too.
+	"iMT_Bothering", // Ellis! Quit bothering these poor people.
+];
+
+local Francis_ResponseConcepts =
+[
+	"ConceptBlock049", // What?
+	"ConceptBlock629", // Whatever you say, professor Monster.
+	"ConceptBlock607", // What if just your beard starts to turn, can I shoot that?
+	"CrashCourseR09", // Ha ha ha ha, this is the one you're gonna die in.
+	"IntroCrashR23", // And it turns out, I was right about that.
+	"CrashFinaleGenerator2Speak", // various generator quotes
+	"ConceptNuttier", // I'm gonna tear that bell down, and shove it up your ass.
+	"ConceptBlock515", // Uh... Hello.
+	"ConceptBlock019", // Everyone is a zombie, or an asshole.
+	"C7M3_saferoom004b", // You're such a nerd.
+	"ConceptBlock710", // I hate hospitals.
+	"C7M1_saferoom17", // I hate islands.
+	"C7M3_saferoom001", // Can we all get our own?
+	"C7M2_saferoom02c", // Bullshit, say "Bill's an idiot" in Japanese.
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
+	"", //
 ];
 
 local chatterRandomThink = SpawnEntityFromTable( "info_target", { targetname = "chatterRandomThink" } )
 local responseConcepts;
 
-// The scope
 function BotRandomChatter()
 {
 	if ( chatterRandomThink.ValidateScriptScope() )
@@ -309,34 +507,35 @@ function BotRandomChatter()
 		chatterRandomThink.GetScriptScope() [ "Think" ] <- function()
 		{
 			// Set the max attempts based on whether any survivor has left the safe area
-            local maxAttempts = Director.HasAnySurvivorLeftSafeArea() ? 64 : 32
-            local bot = null
+			local maxAttempts = Director.HasAnySurvivorLeftSafeArea() ? 64 : 32
+			local bot = null
 
-            // Define a dictionary for model names and response concepts
-            local modelResponseConcepts =
+			// Define a dictionary for model names and response concepts
+			local modelResponseConcepts =
 			{
-                ["models/survivors/survivor_coach.mdl"] = Coach_ResponseConcepts,
-                ["models/survivors/survivor_gambler.mdl"] = Nick_ResponseConcepts,
-                ["models/survivors/survivor_mechanic.mdl"] = Ellis_ResponseConcepts,
-                ["models/survivors/survivor_producer.mdl"] = General_ResponseConcepts,
-                ["models/survivors/survivor_biker.mdl"] = General_ResponseConcepts,
-                ["models/survivors/survivor_manager.mdl"] = General_ResponseConcepts,
-                ["models/survivors/survivor_namvet.mdl"] = General_ResponseConcepts,
-                ["models/survivors/survivor_teenangst.mdl"] = General_ResponseConcepts,
-            }
+				["models/survivors/survivor_coach.mdl"] = Coach_ResponseConcepts,
+				["models/survivors/survivor_gambler.mdl"] = Nick_ResponseConcepts,
+				["models/survivors/survivor_mechanic.mdl"] = Ellis_ResponseConcepts,
+				["models/survivors/survivor_producer.mdl"] = Rochelle_ResponseConcepts,
+				["models/survivors/survivor_biker.mdl"] = General_ResponseConcepts,
+				["models/survivors/survivor_manager.mdl"] = General_ResponseConcepts,
+				["models/survivors/survivor_namvet.mdl"] = General_ResponseConcepts,
+				["models/survivors/survivor_teenangst.mdl"] = General_ResponseConcepts,
+			}
 
-            // Define a dictionary for model names and survivor names (Debugging only)
-            local modelSurvivorNames =
+			// Define a dictionary for model names and survivor names (Debugging only)
+			// Remove this once i'm done.
+			local modelSurvivorNames =
 			{
-                ["models/survivors/survivor_coach.mdl"] = "Coach",
-                ["models/survivors/survivor_gambler.mdl"] = "Nick",
-                ["models/survivors/survivor_mechanic.mdl"] = "Ellis",
-                ["models/survivors/survivor_producer.mdl"] = "Rochelle",
-                ["models/survivors/survivor_biker.mdl"] = "Francis",
-                ["models/survivors/survivor_manager.mdl"] = "Louis",
-                ["models/survivors/survivor_namvet.mdl"] = "Bill",
-                ["models/survivors/survivor_teenangst.mdl"] = "Zoey",
-            }
+				["models/survivors/survivor_coach.mdl"] = "Coach",
+				["models/survivors/survivor_gambler.mdl"] = "Nick",
+				["models/survivors/survivor_mechanic.mdl"] = "Ellis",
+				["models/survivors/survivor_producer.mdl"] = "Rochelle",
+				["models/survivors/survivor_biker.mdl"] = "Francis",
+				["models/survivors/survivor_manager.mdl"] = "Louis",
+				["models/survivors/survivor_namvet.mdl"] = "Bill",
+				["models/survivors/survivor_teenangst.mdl"] = "Zoey",
+			}
 
 			while ( bot = Entities.FindByClassname( bot, "player" ) )
 			{
@@ -346,7 +545,7 @@ function BotRandomChatter()
 				&& !Director.IsTankInPlay() )
 				{
 					// Jab away if the random threshold is met.
-					if ( RandomInt( 0, maxAttempts ) < 1 )
+					if ( RandomInt( 0, maxAttempts ) < 2 )
 					{
 						local modelName = bot.GetModelName();
 						local specificResponseConcepts = modelResponseConcepts[modelName];
@@ -357,23 +556,25 @@ function BotRandomChatter()
 						if ( specificResponseConcepts != null && RandomInt( 0, 100 ) < 65 )
 						{
 							responseConcepts = specificResponseConcepts;
-							Msg( survivorName + ": Picked " + survivorName + "_ResponseConcepts\n" );
+							//Msg( survivorName + ": Picked " + survivorName + "_ResponseConcepts\n" );
+							//Say( bot, "Picked " + survivorName + "_ResponseConcepts", false ); // Error here
 						}
 						else
 						{
 							// If a specific model isn't found or the RNG is 65 or over,
 							// we'll use the general response concepts.
 							responseConcepts = General_ResponseConcepts;
-							Msg( survivorName + " Picked General_ResponseConcepts\n" );
+							//Msg( survivorName + " Picked General_ResponseConcepts\n" );
+							//Say( bot, "Picked General_ResponseConcepts", false );
 						}
 
-						DoEntFire( "!self", "SpeakResponseConcept", responseConcepts[ RandomInt( 0, responseConcepts.len() - 1 ) ], RandomFloat( 0.5, 2.0 ), null, bot );
+						DoEntFire( "!self", "SpeakResponseConcept", responseConcepts[ RandomInt( 0, responseConcepts.len() - 1 ) ], RandomFloat( 0.3, 1.0 ), null, bot );
 					}
 				}
 			}
 
-			//Have this run again in 2.8 seconds.
-			return 2.8
+			//Have this run again in 2.5 seconds.
+			return 2.5
 		}
 
 		AddThinkToEnt( chatterRandomThink, "Think" )
