@@ -459,46 +459,344 @@ local Francis_ResponseConcepts =
 	"C7M1_saferoom17", // I hate islands.
 	"C7M3_saferoom001", // Can we all get our own?
 	"C7M2_saferoom02c", // Bullshit, say "Bill's an idiot" in Japanese.
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
-	"", //
+	"C7M3_saferoom016c", // It's mental illness.
+	"Smalltown04_path05a", // I'm coming Bill, keep your beard on.
+	"IntroCrashR06", // Well, it's pretty complicated.
+	"C7M1_saferoom21a", // Nah, don't worry. I hate boats too.
+	"ConceptBlock721", // [laughs] Go to hell.
+	"CrashCourseC01", // Ehhh, I doubt it
+	"ConceptBlock558", // Have a heart, we got a helpless old man with us.
+	"ConceptBlock637", // Long enough to know that you got a pretty mouth.
+	"IntroCrashR18", // Cuz, it's money in the bank, remind me to explain gambling to you sometime.
+	"ConceptBlock697", // Whatever.
+	"ConceptBlock635", // Look on the bright side, if we don't make it, I'll still be handsome.
+	"InfoRemc7m1_tankcar01", // Tanks?
+	"CrashYerKidding", // Yer kidding, right?
+	"hospital03_path08a2", // Woah, hey. That's uncalled for.
+	"airport04_08a", // Bill? I was the one that who said that.
+	"c6m3_outroL4D108a", // Nope, I haven't heard that one.
+	"C6M1Intro_01b", // Nope!
+	"InfoReminfo_powerboat4a", // Quiet Zoey.
+	"C7M1_saferoom21", // Aye aye, Captain.
+	"NeedsHelpResponseLouisB2", // I mean, I'm cool with that.
+	"CrashCourseR10", // Nice one
+	"C6M1Intro_10a", // Bite me.
+	"CrashFinaleGeneratorUnPressSpeak", // Damnit!
+	"C7M1_saferoom14a", // Hey, I ain't the one who though we can drive a train in the ocean.
+	"ConceptBlock712", // Y'know what I don't hate? I don't hate vests.
+	"CrashCourseR13", // I hate steam..... pipes.
+	"c6m3_loss", // There's not many of us left, brother.
+	"C7M1_saferoom13", // I think those are Bill's tears.
+	"C7M1_saferoom05", // Louis, tell Zoey that I don't know what's going on.
+	"IntroCrashR26", // Not even WEARIN' chaps.
+	"SmallTown02_path01c", // You know what, I just realized I don't care, lead on!
+	"C6M1Intro_05d", // No Ma'am.
+	"C7M1_saferoom15b", // Hey Louis, I never thought I say, but I wanna hang out with you.
+	"RiversideIsDeadPlan", // That's better than my plan.
+	"C7M1_saferoom18a", // Okay, I vote for the island paradise where we don't have to fight zombies.
+	"C7M1_saferoom07a", // What? We aren't gonna try and drive it on the ground?
+	"ConceptBlock632", // Most people'll do anything if a cop tells them to.
+	"C6M1Intro_20e", // Louis, I told you they're vampires.
+	"C6M1Intro_09c", // I was talking to the little lady.
+	"C6M1Intro_24b", // Yeah, yeah! that's what i've been saying.
+	"C7M1_saferoom12a", // Really? This is you pissed?
+	"IntroCrashR02", // I guess i DID tell ya.
+	"InfoRemc7m1_pretank01", // Fine with me.
+	"CrashCourseR11", // Unless it's lasagna monday, I love lasagna.
+	"elevator_conversation", // Random Converstation
+	"C7M1_saferoom06", // Found one.
+	"C7M3_saferoom014b", // I don't know, I like to eat them.
+	"IntroCrashR04", // Alright, i'll give you that.
+	"iMT_Hate", // I hate -
+	"iMT_Waterworks", // Waterworks?
+	"iMT_FrozenBeard", // Hey Bill, your beard is frozen.
+	"iMT_ImACop", // No no no, I AM a cop.
+	"iMT_Brave", // Jesus i'm brave.
+	"iMT_GodIsDead", // So God's dead huh?
+	"iMT_Hersch", // I drove for hersch once...
+	"iMT_Dog", // I wonder what happenend to that dog.
+	"iMT_Predict", // I could've predicted
+	"iMT_WomanOfTaste", // What?  She's a woman of taste.
+	"iMT_Recycle", // Those guys recycle anything.
+	"iMT_HateToo", // oh my god. YOU HATE STUFF TOO?
+	"iMT_Hero", // Yeah yeah, we get it, you're a hero.
+	"iMT_YourName", // What's your name again?
+	"iMT_LoveRo", // Bye bye ro, I love you!
+	"iMT_ShotHim", // Bill woud've shot him
+	"iMT_Slow", // Taking it slow huh?
+	"iMT_ThisFar", // never thought a fancy ass would make it this far.
+];
+
+local Louis_ResponseConcepts =
+[
+	"ConceptBlock050", // What?
+	"C7M1_saferoom12", // Yeah. I'm pissed.
+	"ConceptBlock717", // I gotta bad feeling about this.
+	"InfoRemc7m1_pretank02", // Me?!
+	"airport04_08b", // You're joking, right?
+	"CrashFinaleGenerator2Speak", // Generator related starting.
+	"C7M3_saferoom003a", // Holw old are you Bill?
+	"ConceptBlock515", // Hello?
+	"ConceptBlock019", // I'm going to beat you to death with my gun!
+	"ConceptBlock652", // Whistle
+	"CrashCourseB01", // Canada? Francis, we're in Pennsylvania.
+	"C7M3_saferoom004", // I can make a firewall.
+	"ConceptBlock645", // I ain't dying man.
+	"ConceptBlock658", // We are unstoppable.
+	"C7M3_saferoom017g", // Punk-ass island bitch!
+	"IntroCrashR24", // Find yourself a parade.
+	"CrashCourseR04", // I'll be damned Francis, whne did you learn to read?
+	"ConceptBlock628", // They're zombies, Francis.
+	"TakeShotgunGroovyLouis", // Giggle
+	"IntroCrashR09", // For once, we're in complete agreement, Francis.
+	"ConceptBlock619", // Humanity's gonna bounce right back up, you watch.
+	"IntroCrashR22", // Five minutes ago, you hated flying.
+	"IntroCrashWalkingB", // I have a bad feeling about this.
+	"CrashCourseI01", // Sounds good.
+	"C7M3_saferoom006b", // No more internet, no more xbox, no more nothing.
+	"C7M2_saferoom02", // Taki, I love you, goodbye.
+	"Farm01_path03a", // I bet your country-ass DOES likes this trailer.
+	"C7M3_saferoom009a", // I like the sound of that.
+	"SmallTown02_path01b", // Interesting true story, in 1975, the local township -
+	"IntroCrashR13", // Have you tried turning it off and on again?
+	"C7M3_saferoom016d", // Hey Francis, I got a good feeling of wearing your skin.
+	"hospital04_path02a", // It's good for you Bill. Cardio.
+	"C7M3_saferoom016b", // I'm in too good of a mood to get mad at you Francis.
+	"C7M3_saferoom007c", // I don't remember what that feels like.
+	"C7M1_saferoom05a", // I think she's mad at Bill.
+	"IntroCrashR31", // On the bright side, look at all the great scenery we would've missed.
+	"CrashFinaleGeneratorUnPressSpeak", // Damnit!
+	"C7M1_saferoom21", // Francis, am I alone in hating boats?
+	"C7M1_saferoom22a", // I'm trying Bill.
+	"C7M3_saferoom010a", // I've always wanted to learn how to fish.
+	"C7M3_saferoom015a", // Just a good feeling, i guess.
+	"c6m3_outroL4D102a", // It was nice to see normal people for once.
+	"IntroCrashR17", // Francis, why would you bet that we're doomed?
+	"C7M3_saferoom013c", // Man, this is going to be the long rest of our lives.
+	"C7M1_saferoom24", // Way to go Francis, some carido is just want we needed.
+	"C7M1_saferoom15c", // Well thanks man.
+	"ConceptBlock640", // That's what I'm talking about
+	"IntroCrashR03", // We walking away from it, ain't we?
+	"IntroCrashR37", // I bet we ain't going to see any more witches.
+	"C7M2_saferoom04", // I think this island is the only chance we got.
+	"c6m3_outroL4D106a", // Go Ellis.
+	"C7M2_saferoom05c", // Let's make of note of that next time.
+	"C7M1_saferoom08a", // I'd like to see that too.
+	"RiversideIsDeadPlan", // Okay...
+	"CrashCourseA01", // If it gets us to a safe zone.
+	"Farm03_path01a", // Stay positive guys, I got a good feeling.
+	"c6m3_loss2", // Hope if you don't mind we stay on our own.
+	"C7M1_saferoom06b", // And it's on fire.
+	"hospital04_path04a", // Get to the elevator
+	"CrashCourseR10", // Farting...
+	"C7M1_saferoom25b", // How can we be sure they're immune
+	"C14M2NoteLighthouse2", // I got a bad feeling about this one.
+	"iMT_TankFactory", // Hey Francis, what do they make at the tank factory?
+	"iMT_GordonFreeman", // I feel like I'm gordon freeman.
+	"iMT_Hero", // I outta start callin' you Jason.
+	"iMT_Belch", // *Burp* 'scuse me.
+	"iMT_Apocalypse", // Oh it's a bitch apocalypse now, bitch!
+	"iMT_CounterStrike", // Grabbing a machine gun / Oh man, this is just like Counter-Strike!
+	"iMT_CubScouts", // Any you guys cub scouts?
+	"iMT_Alley", // Francis, wasn't this the alley you were born in?
+	"iMT_Recycle", // I can't wait to recylce shit again.
+	"iMT_Introduction", // Hi, I'm Louis.
+	"iMT_SeeingMore", // Gonna be seeing more of that guy.
+	"iMT_Believing", // Francis said you weren't gonna make it.
+	"iMT_IT",
+	"iMT_MadeIt", // Hey, you made it!
+	"iMT_RifleRange", // Guys used to laugh at me at the rifle range.
+	"iMT_ShotHim", // You're right Francis, he's not friendly. Bill would've shot him.
+	"iMT_New", // Is that a NEW zombie?
+	"iMT_BackToNormal", // I'm teaching your ass how to read.
+];
+
+local Bill_ResponseConcepts =
+[
+	"ConceptBlock051", // Wat?
+	"ConceptBlock639", // I'll see peace back on earth if I have to murder these bastards with my bare hands.
+	"C7M3_saferoom003c", // They didn't have electricity when I was born.
+	"ConceptBlock611", // We're fighting a war of attrietion.
+	"C7M3_saferoom003", // Bahhh, keep your computers, emails.. just give a pen and paper.
+	"CrashFinaleGenerator2Speak", // Generator
+	"C7M1_saferoom25a", // Out here, they're immune or dead.
+	"ConceptBlock515", // Hello?
+	"ConceptBlock025", // Son, we're immune, we're tired and there's infected in the damn woods.
+	"ConceptBlock556", // Hey!
+	"C7M1_saferoom06b", // And it's on fire!
+	"InfoReminfo_carnotboat", // Francis that's a car!
+	"InfoRemc7m2_seebarge01", // You know how to pilot these things, Fracis?
+	"C7M3_saferoom010b", // I'll make you into a pro.
+	"C7M1_saferoom16a", // You gettin' tired Francis?
+	"C7M1_saferoom13a", // I'll give you something to cry about.
+	"ConceptBlock608", // Teasing
+	"ConceptBlock696", // They're zombies francis
+	"ConceptBlock715", // Giggle
+	"CrashFinaleGeneratorSpeakN", // Dahh, I'm too old for this shit.
+	"C7M1_saferoom21b", // Francis, you would've been walking the plank.
+	"airport04_08c", // Christ almighty...
+	"C7M1_saferoom01a", // Shut up Francis.
+	"C7M1_saferoom24a", // You're a regular health nut
+	"InfoReminfo_trailerboatruck", // Cut the horseshit Francis.
+	"C7M1_saferoom22", // It'll do you good, son.
+	"InfoReminfo_trailerboat", // Son, that's a trailer and you're an idiot.
+	"InfoRemInfo_powerboat", // Sail boat, Francis.
+	"C7M3_saferoom012f", // Noted, let's go.
+	"hospital04_path04a", // Elevator
+	"C7M2_saferoom07", // We'll find it, we'll find it.
+	"hospital04_path01a", // I've smelled worse.
+	"C7M1_saferoom08b", // Both of you, shut up.
+	"airport04_08a", // What'd I tell ya?  They tried to stop people from leaving.
+	"C7M1_saferoom12b", // Shut your traps, let's move out.
+	"InfoRemc7m1_harborblocked01", // Louis, the ocean doesn't flow into the river.
+	"C7M1_saferoom04b", // 'Cause we ain't stoppin' for gas.
+	"CrashFinaleGeneratorUnPressSpeak", // Generator
+	"ConceptBlock652", // Humming
+	"ConceptBlock711", // Francis, is there anything you don't hate?
+	"C7M2_saferoom05b", // Shut up Franc--, alright that's not a bad idea.
+	"NeedsHelpResponseLouisC2", // I'm kidding, let's go get him.
+	"ConceptBlock663", // Woah-ho-ho.
+	"ConceptNuttier", // This guy's nuttier than candy bar shit.
+	"C7M1_saferoom20b", // Zoey, I can't.
+	"C7M1_saferoom03", // Nope. Gotta be a sail boat.
+	"ConceptBlock648", // What the hell was that?
+	"InfoReminfo_sunkboatthere01", // Francis, that boat's underwater.
+	"hospital02_path03c1", // Going to have to go top side.
+	"Farm05_Path09C", // The honest to God military!
+	"C7M2_saferoom01a", // Zoey. Listen. The four of us are all that matters now.
+	"C7M1_saferoom23a", // Zoey...  I'm not leaving any of you behind.
+	"C7M1_saferoom10b", // This isn't gonna be easy.
+	"IntroAirport01bb", // A C-130 is nice flying.
+	"ResponseWeCanStill", // Damn straight!
+	"DontBeAnAss", // Don't be an ass Francis
+	"C7M1_saferoom14", // You ever get tired of being an idiot Francis?
+	"C7M2_saferoom06", // Dammit, Zoey! We trusted CEDA! We trusted the military!
+	"C7M1_saferoom09a", // That was my plan.
+	"IntroHospital03", // Good thinking!
+	"elevator_conversation",
+	"hospital02_path03b1", // This seems too easy.
+	"RiversideIsDeadPlan", // Alright, let's do it then.
+	"C14M2NoteLighthouse2", // I have a bad feeling about this.
+	"iMT_Cold", // Is it too cold for you crybabies?
+	"iMT_10Miles", // walked through 10 miles.
+	"iMT_GoodEnough",
+	"iMT_Stink", // Francis, is that you or the sewer?
+	"iMT_GoodRun", // I had a good run (rest in piece Bill)
+	"iMT_ShoeLeather",
+	"iMT_JobDone", // My jobs done.
+	"iMT_Woods", // Woods thicker than boomer shit.
+	"iMT_LastFight", // You're too late!
+	"iMT_Mad", // Zoey? You still mad?
+	"iMT_Hallelujah", // Hallelujah!
+	"iMT_Lonely", // I was getting lonely.
+	"iMT_Home", // Francis, does this look like home to you?
+	"iMT_FirstStep", // That first step'll kill you.
+	"iMT_BigMouth", // Looks like yer big mouth still works.
+	"iMT_Phone", // No one's gonna be answering that phone.
+	"iMT_Family", // The only family i've got!
+];
+
+local Zoey_ResponseConcepts =
+[
+	"ConceptBlock052", // What?
+	"ConceptBlock647", // Game over man
+	"C7M3_saferoom016c", // I hate putting the lotion in the basket.
+	"CrashCourseR12", // I love steam!
+	"C7M1_saferoom09b", // Whatever
+	"CrashFinaleGenerator2Speak",
+	"ConceptBlock037", // What a dick!
+	"ConceptBlock515", // Hello
+	"ConceptBlock032", // Open the damn door!
+	"C7M3_saferoom004b", // Ohhh booo!
+	"CrashCourseB01", // Canada? Francis, we're in Pennsylvania.
+	"ConceptBlock652", // So uh, yeah.
+	"BounceReaction", // I'm ready to bounce
+	"C6M1Intro_22b", // Yeah, I had that feeling as well.
+	"C6M1Intro_15b", // ohh boo
+	"C7M3_saferoom005", // would've picked 10 movies.
+	"CrashCourseR01", // Birds are dicks.
+	"CrashCourseR03", // The pilot was a ZOMBIE
+	"ConceptBlock643", // Oops, sorry.
+	"C7M3_saferoom006c", // No more human race.
+	"C7M2_saferoom05b", // Because Franci-- yeah, what the hell Bill?
+	"C7M1_saferoom18", // I'd like to put a vote.
+	"CrashCourseR11", // I love lasagna
+	"C7M1_saferoom23", // Maybe we can meet some new people.
+	"ConceptBlock620", // You're an optimist Louis, I'll give you that.
+	"CrashCourseR10", // Heh, nice.
+	"InfoReminfo_powerboat4", // Francis, do you even know what asailboat looks like?
+	"CrashFinaleGenerator2OnSpk", // Come to mama.
+	"C7M2_saferoom01b", // Bill, I'm not ready to give up.
+	"IntroCrashR01", // Ugh, do you HATE them?
+	"c6m3_outroL4D109a", // Sure you are Francis, sure you are.
+	"c6m3_outroL4D104a", // Francis, It's nice to see that still in you.
+	"IntroCrashR10", // I knew it was too good to last.
+	"C7M1_saferoom19a", // Louis, you of all people should understand.
+	"c6m3_outroL4D105a", // Where? At the mall?
+	"C6M1Intro_15d", // I could shoot you where you stand.
+	"C6M1Intro_23a", // Not exactly.
+	"c6m3_outroL4D103a", // It's hard enough.
+	"c6m3_outroL4D107a", // Yeah, for about 10 minutes.
+	"airport04_08d", // Right...
+	"c6m3_outroL4D102b", // Don't worry, they won't be the last.
+	"PlaneCrashResponse", // Holy shit!
+	"IntroCrashR09", // Seconded, what the hell.
+	"C7M1_saferoom02", // Yeah, or Bill will you leave.
+	"c6m3_outroL4D101a", // Yeah, but... it's us three now.
+	"TakeShotgunGroovyZoey", // Groovy.
+	"C7M1_saferoom11", // Those ppl still dead?
+	"IntroCrashR11", // The shitty pilot's store?
+	"C7M3_saferoom007b", // I think that means we're safe.
+	"IntroHospital02", // Good thinking.
+	"elevator_conversation",
+	"airport04_08b", // They were trying to stop the infection.
+	"IntroCrashR04", // At least we got out of the city.
+	"IntroCrashR07", // You what? Francis, are you alright?
+	"iMT_Yoink",
+	"iMT_NervousHumming",
+	"iMT_5000Lawyers",
+	"iMT_GodDamnYou",
+	"iMT_SoylentGreen",
+	"iMT_PilotLicense",
+	"iMT_Chickenshits",
+	"iMT_ProclaimLiberty",
+	"iMT_SexyBrunette",
+	"iMT_GodIsDead",
+	"iMT_MetalSupply",
+	"iMT_Really",
+	"iMT_Parking",
+	"iMT_CopyPaper",
+	"iMT_PassingGas",
+	"iMT_SnowCold",
+	"iMT_Shoes",
+	"iMT_LatestIssue",
+	"iMT_Greeting",
+	"iMT_NiceCar",
+	"iMT_MyBuddyEllis",
+	"iMT_Morons",
+	"iMT_MissEllis",
+	"iMT_CarCalling",
+	"iMT_ComeBack",
+	"iMT_Steal",
+	"iMT_LastWoman",
 ];
 
 local chatterRandomThink = SpawnEntityFromTable( "info_target", { targetname = "chatterRandomThink" } )
 local responseConcepts;
+
+// Table for model names and response concepts.
+// There should be a better way than this garbage.
+local modelResponseConcepts =
+{
+	["models/survivors/survivor_coach.mdl"] = Coach_ResponseConcepts,
+	["models/survivors/survivor_gambler.mdl"] = Nick_ResponseConcepts,
+	["models/survivors/survivor_mechanic.mdl"] = Ellis_ResponseConcepts,
+	["models/survivors/survivor_producer.mdl"] = Rochelle_ResponseConcepts,
+	["models/survivors/survivor_biker.mdl"] = Francis_ResponseConcepts,
+	["models/survivors/survivor_manager.mdl"] = Louis_ResponseConcepts,
+	["models/survivors/survivor_namvet.mdl"] = Bill_ResponseConcepts,
+	["models/survivors/survivor_teenangst.mdl"] = Zoey_ResponseConcepts,
+}
 
 function BotRandomChatter()
 {
@@ -507,73 +805,43 @@ function BotRandomChatter()
 		chatterRandomThink.GetScriptScope() [ "Think" ] <- function()
 		{
 			// Set the max attempts based on whether any survivor has left the safe area
-			local maxAttempts = Director.HasAnySurvivorLeftSafeArea() ? 64 : 32
+			local maxAttempts = Director.HasAnySurvivorLeftSafeArea() ? 96 : 48
+			//local maxAttempts = Director.HasAnySurvivorLeftSafeArea() ? 64 : 32
+			// SET NULL YOU ASS!
 			local bot = null
-
-			// Define a dictionary for model names and response concepts
-			local modelResponseConcepts =
-			{
-				["models/survivors/survivor_coach.mdl"] = Coach_ResponseConcepts,
-				["models/survivors/survivor_gambler.mdl"] = Nick_ResponseConcepts,
-				["models/survivors/survivor_mechanic.mdl"] = Ellis_ResponseConcepts,
-				["models/survivors/survivor_producer.mdl"] = Rochelle_ResponseConcepts,
-				["models/survivors/survivor_biker.mdl"] = General_ResponseConcepts,
-				["models/survivors/survivor_manager.mdl"] = General_ResponseConcepts,
-				["models/survivors/survivor_namvet.mdl"] = General_ResponseConcepts,
-				["models/survivors/survivor_teenangst.mdl"] = General_ResponseConcepts,
-			}
-
-			// Define a dictionary for model names and survivor names (Debugging only)
-			// Remove this once i'm done.
-			local modelSurvivorNames =
-			{
-				["models/survivors/survivor_coach.mdl"] = "Coach",
-				["models/survivors/survivor_gambler.mdl"] = "Nick",
-				["models/survivors/survivor_mechanic.mdl"] = "Ellis",
-				["models/survivors/survivor_producer.mdl"] = "Rochelle",
-				["models/survivors/survivor_biker.mdl"] = "Francis",
-				["models/survivors/survivor_manager.mdl"] = "Louis",
-				["models/survivors/survivor_namvet.mdl"] = "Bill",
-				["models/survivors/survivor_teenangst.mdl"] = "Zoey",
-			}
 
 			while ( bot = Entities.FindByClassname( bot, "player" ) )
 			{
+				// If our bot is on survivors, and is a bot
+				// and not incapped, hanging, near death, dead
+				// in combat or no tanks active...
+				// do it!
+
 				if ( bot.IsSurvivor() && IsPlayerABot( bot )
 				&& !bot.IsIncapacitated() && !bot.IsHangingFromLedge() && !bot.IsOnThirdStrike() && !bot.IsDead()
-				&& !bot.IsInCombat() && /* !bot.IsFiringWeapon() && */ !bot.IsOnFire() /* && !bot.IsStaggering() */
+				&& !bot.IsInCombat() /* && !bot.IsFiringWeapon() && !bot.IsOnFire() && !bot.IsStaggering() */
 				&& !Director.IsTankInPlay() )
 				{
 					// Jab away if the random threshold is met.
-					if ( RandomInt( 0, maxAttempts ) < 2 )
+					if ( RandomInt( 0, maxAttempts ) < 3 )
 					{
 						local modelName = bot.GetModelName();
 						local specificResponseConcepts = modelResponseConcepts[modelName];
-						local survivorName = modelSurvivorNames[modelName] || "UNDEFINED MODEL";
 
 						// If a specific model is found and an RNG between 0 and 100 is less than 65,
 						// we'll use the specific response concepts for that model.
 						if ( specificResponseConcepts != null && RandomInt( 0, 100 ) < 65 )
-						{
 							responseConcepts = specificResponseConcepts;
-							//Msg( survivorName + ": Picked " + survivorName + "_ResponseConcepts\n" );
-							//Say( bot, "Picked " + survivorName + "_ResponseConcepts", false ); // Error here
-						}
-						else
-						{
-							// If a specific model isn't found or the RNG is 65 or over,
-							// we'll use the general response concepts.
+						else // If the RNG is 65 or over, use general response.
 							responseConcepts = General_ResponseConcepts;
-							//Msg( survivorName + " Picked General_ResponseConcepts\n" );
-							//Say( bot, "Picked General_ResponseConcepts", false );
-						}
 
-						DoEntFire( "!self", "SpeakResponseConcept", responseConcepts[ RandomInt( 0, responseConcepts.len() - 1 ) ], RandomFloat( 0.3, 1.0 ), null, bot );
+						// Jab away and possibly make players laugh.
+						DoEntFire( "!self", "SpeakResponseConcept", responseConcepts[ RandomInt( 0, responseConcepts.len() - 1 ) ], RandomFloat( 0.3, 0.6 ), null, bot );
 					}
 				}
 			}
 
-			//Have this run again in 2.5 seconds.
+			//Have this run again in 2.7 seconds
 			return 2.5
 		}
 
